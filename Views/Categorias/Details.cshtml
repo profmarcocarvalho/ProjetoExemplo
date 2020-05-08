@@ -1,0 +1,30 @@
+@model AspMVCMasterDetailExample.Models.Categoria
+
+<h1>Categoria : @Html.DisplayFor(model => model.Nome)</h1>
+<p>
+    <a asp-action="Index">Voltar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Nome
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Produtos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
